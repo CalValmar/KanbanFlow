@@ -1,0 +1,14 @@
+# Ignore les dossiers et fichiers générés par npm et Node.js
+node_modules/
+package-lock.json
+npm-debug.log
+
+# Ignore les fichiers de configuration locaux
+.env
+
+# Ignore les fichiers de build ou de compilation
+/build
+/dist
+
+# Ignore les fichiers d'éditeur spécifiques (par exemple, les fichiers créés par Visual Studio Code)
+.vscode/

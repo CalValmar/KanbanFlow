@@ -2,6 +2,7 @@
 node_modules/
 package-lock.json
 npm-debug.log
+database.js
 
 # Ignore les fichiers de configuration locaux
 .env

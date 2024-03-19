@@ -360,21 +360,23 @@ async function updateTasksInDB(tasks) {
 //saveTasksJsonToDB();  // OK
 
 // Export the data management layer functions
-module.exports.readUsers    = readUsers;
-module.exports.writeUsers   = writeUsers;
-module.exports.readBoards   = readBoards;
-module.exports.writeBoards  = writeBoards;
-module.exports.readTasks    = readTasks;
-module.exports.writeTasks   = writeTasks;
+module.exports.readDataFile  = readDataFile;
+module.exports.writeDataFile = writeDataFile;
+module.exports.readUsers     = readUsers;
+module.exports.writeUsers    = writeUsers;
+module.exports.readBoards    = readBoards;
+module.exports.writeBoards   = writeBoards;
+module.exports.readTasks     = readTasks;
+module.exports.writeTasks    = writeTasks;
 
 // Export the database management layer functions
-module.exports = saveDBDataToJSON
-module.exports = saveJSONDataToDB
+module.exports.saveDBDataToJSON = saveDBDataToJSON;
+module.exports.saveJSONDataToDB = saveJSONDataToDB;
 
-module.exports = saveUsersJsonToDB
-module.exports = saveBoardsJsonToDB
-module.exports = saveTasksJsonToDB
+module.exports.saveUsersJsonToDB  = saveUsersJsonToDB;
+module.exports.saveBoardsJsonToDB = saveBoardsJsonToDB;
+module.exports.saveTasksJsonToDB  = saveTasksJsonToDB;
 
-module.exports = clearDBUsers
-module.exports = clearDBBoards
-module.exports = clearDBTasks
+module.exports.clearDBUsers  = clearDBUsers;
+module.exports.clearDBBoards = clearDBBoards;
+module.exports.clearDBTasks  = clearDBTasks;

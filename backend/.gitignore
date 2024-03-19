@@ -2,7 +2,12 @@
 node_modules/
 package-lock.json
 npm-debug.log
+
+# Ignore les fichiers de données
 database.js
+backend/data/boards.json
+backend/data/tasks.json
+backend/data/users.json
 
 # Ignore les fichiers de configuration locaux
 .env

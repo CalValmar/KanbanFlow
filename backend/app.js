@@ -16,7 +16,13 @@ app.get('/', (req, res) => {
   res.send(`
     <h1>Welcome to the KanbanFlow API</h1>
     <h2>Please use /status to verify the connection to the API and database</h2>
-    <br> 
+    <h3>API routes:</h3>
+    <ul>
+      <li>/users</li>
+      <li>/boards</li>
+      <li>/tasks</li>
+    </ul>
+    <br>
     <img src="/logo.png" alt="Logo" style="width: 500px; height: 500px; display: block; margin: 0 auto;" /> 
   `);
 });

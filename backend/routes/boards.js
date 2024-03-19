@@ -1,6 +1,6 @@
 const express = require('express');
-const dml = require('../data/dataManagementLayer');
-const authenticatedToken = require('./users.js');
+const dml = require('../data/dataManagementLayer.js');
+const authenticateUser = require('./users.js');
 
 const router = express.Router();
 
@@ -35,13 +35,13 @@ router.get('/', async (req, res, next) => {
 
 
 // Create a new board : POST /boards/create?name=board_name
-router.post('/create', authenticatedToken ,async (req, res, next) => {
+router.post('/create', authenticateUser, async (req, res) => {
     const existedBoards = await dml.readBoards();
-
+    
     const newBoard = {
         id: existedBoards.length + 1,
         name: req.query.name,
-        user_id: authenticatedToken.id, // Get the user_id from the token --> don't work !! 
+        user_id: req.user,
         created_at: new Date().toISOString()
     }
     const allBoards = [...existedBoards, newBoard];

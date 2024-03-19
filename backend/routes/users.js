@@ -7,16 +7,18 @@ const saltRounds = 10;
 const router = express.Router();
 
 // Authentication Middleware
-function authenticateToken(req, res, next) {
+function authenticateUser(req, res, next) {
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1];
-    if (token == null) return res.sendStatus(401);
-    jwt.verify(token, 'secret-key', (err, user) => { 
+
+    if (token == null) return res.sendStatus(401); // if there isn't any token
+
+    jwt.verify(token, 'secret-key', (err, user) => {
         if (err) return res.sendStatus(403);
-        req.user = user;
+        req.user = user; 
         next();
     });
-};
+}
 
 // Get all users : GET /users/list
 router.get('/list', async (req, res, next) => {
@@ -141,4 +143,4 @@ router.delete('/delete', async (req, res, next) => {
 
 
 module.exports = router;
-//module.exports = authenticateToken;
+module.exports.authenticateUser = authenticateUser;

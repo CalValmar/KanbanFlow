@@ -1,16 +1,32 @@
-import React from 'react';
-import Board from './components/Board';
 import './App.css';
-import TaskForm from './components/TaskForm';
+import React from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Dashboards from './components/Dashboards';
+import Users from './components/Users';
+import Boards from './components/Boards';
+import Tasks from './components/Tasks';
+
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <Dashboards />,
+      children: [
+        { index: true, element: <Users /> },
+        { path: 'users', element: <Users /> },
+        { path: 'boards', element: <Boards /> },
+        { path: 'tasks', element: <Tasks /> },
+      ]
+    }
+  ]
+);
+
 
 function App() {
   return (
-    <div className="app">
-      <h1>KanbanFlow</h1>
-      <Board />
-      <TaskForm />
-    </div>
+    <RouterProvider router={router}></RouterProvider>
   );
 }
+
 
 export default App;

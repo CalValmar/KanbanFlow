@@ -1,47 +1,25 @@
 .app {
   font-family: Arial, sans-serif;
-  text-align: center;
-}
-
-.board {
-  margin: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: #f9f9f9;
-}
-
-.card-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.card {
-  width: 200px;
+  text-align: auto;
   margin: 10px;
   padding: 10px;
-  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  color: #000000;
+  text-shadow: 0px 0px 10px #f70202; 
+  box-shadow: 0px 0px 10px #f70202;
   border-radius: 10px;
-  background-color: #fff;
+  border: 1px solid #f70202;
 }
 
-.task-form {
-  background-color: #f8f9fa;
-  color: #212529;
-  border: 1px solid #dee2e6;
-  padding: 5px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  margin-left: 20px;
-  cursor: pointer;
+.dashboard {
+  font-family: Arial, sans-serif;
+  text-align: auto;
+  margin: 10px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  color: #000000;
+  text-shadow: 0px 0px 10px #f70202; 
+  box-shadow: 0px 0px 10px #f70202;
   border-radius: 10px;
-  transition: background-color 0.3s ease;
-}
-
-.task-form:hover {
-  background-color: #dee2e6;
+  border: 1px solid #f70202;
 }

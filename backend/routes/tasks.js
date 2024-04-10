@@ -1,7 +1,5 @@
 const express = require('express');
 const dml = require('../data/dataManagementLayer');
-const { verify } = require('jsonwebtoken');
-// const authenticatedToken = require('./users.js');
 
 const router = express.Router();
 
@@ -47,7 +45,36 @@ router.get('/', async (req, res, next) => {
     }
 });
 
-// Create a new task : POST /tasks/create?title=xxx&description=yyy&due_date=zzz&board_id=aaa&user_id=bbb&status=ccc
+// Create a new task : POST /tasks/create?title=xxx&description=yyy&due_date=zzz&board_id=aaa&status=ccc
+router.post('/create', async (req, res, next) => {
+    const title = req.query.title;
+    const description = req.query.description;
+    const dueDate = req.query.due_date;
+    const boardId = req.query.board_id;
+    const userId = req.session.userId;
+    const status = verifyStatus(req.query.status);
+
+    try {
+        const tasks = await dml.readTasks();
+        const newTask = {
+            id: tasks.length + 1,
+            title: title,
+            description: description,
+            due_date: dueDate,
+            board_id: boardId,
+            user_id: userId,
+            status: status,
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString()
+        };
+        tasks.push(newTask);
+        await dml.writeTasks(tasks);
+        res.status(201).json(newTask);
+        console.log('[INFO] New task created : ' + title);
+    } catch (err) {
+        next(err);
+    }
+});
 
 
 // Update a task : PUT /tasks/update?id=xxx&title=yyy&description=zzz&due_date=aaa&&status=bbb

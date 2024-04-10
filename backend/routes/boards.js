@@ -34,15 +34,18 @@ router.get('/', async (req, res, next) => {
 });
 
 
-// Create a new board : POST /boards/create?name=board_name
+// Create a new board : POST /boards/create?name=board_name&description=board_description
 router.post('/create', authenticateUser, async (req, res) => {
     const existedBoards = await dml.readBoards();
+    const userId = req.session.userId;
     
     const newBoard = {
         id: existedBoards.length + 1,
         name: req.query.name,
-        user_id: req.user,
-        created_at: new Date().toISOString()
+        description: req.query.description,
+        user_id: userId,
+        created_at: new Date().toISOString(),
+        updated_at: new Date().toISOString()
     }
     const allBoards = [...existedBoards, newBoard];
     await dml.writeBoards(allBoards);
@@ -68,10 +71,11 @@ router.delete('/delete', async (req, res, next) => {
     if (boardName) console.log('[INFO] Board deleted for name : ' + boardName);
 });
 
-// Update a name of a board by id : PUT /boards/update?id=xxx&name=yyy
+// Update a name of a board by id : PUT /boards/update?id=xxx&name=yyy&description=zzz
 router.put('/update', async (req, res, next) => {
     const boardId = req.query.id;
     const boardName = req.query.name;
+    const boardDescription = req.query.description;
 
     const existedBoards = await dml.readBoards();
     const board = existedBoards.find(board => parseInt(board.id) === parseInt(boardId));
@@ -82,14 +86,16 @@ router.put('/update', async (req, res, next) => {
         if (parseInt(board.id) === parseInt(boardId) || board.name === boardName){
             return {
                 ...board,
-                name: boardName || board.name
+                name: boardName || board.name,
+                description: boardDescription || board.description,
+                updated_at: new Date().toISOString()
             }
         }
         return board;
     });
     await dml.writeBoards(allBoards);
     res.json({board});
-    console.log('[INFO] Board updated for ID : ' + boardId + ' with name : ' + boardName);
+    console.log('[INFO] Board updated for ID : ' + boardId + ' and name : ' + boardName + ' and description : ' + boardDescription);
 });
 
 

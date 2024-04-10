@@ -1,24 +1,9 @@
 const dml = require('../data/dataManagementLayer');
 const express = require('express');
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
 const saltRounds = 10;
 
 const router = express.Router();
-
-// Authentication Middleware
-function authenticateUser(req, res, next) {
-    const authHeader = req.headers['authorization'];
-    const token = authHeader && authHeader.split(' ')[1];
-
-    if (token == null) return res.sendStatus(401); // if there isn't any token
-
-    jwt.verify(token, 'secret-key', (err, user) => {
-        if (err) return res.sendStatus(403);
-        req.user = user; 
-        next();
-    });
-}
 
 // Get all users : GET /users/list
 router.get('/list', async (req, res, next) => {
@@ -62,10 +47,19 @@ router.post('/login', async (req, res, next) => {
         console.log(`[ERROR] Incorrect password for username: ${username}`);
         return res.status(400).json({ error: "Incorrect password" });
     }
-    const token = jwt.sign({ id: user.id, username: user.username }, 'secret-key');
+    req.session.userId = user.id;
     console.log('[INFO] User logged in : ' + username);
-    res.json({message: "Logged in successfully", token: token});
+    res.json({message: "Logged in successfully"});
 });
+
+// Disconnect a user : POST /users/logout?username=xxx
+router.post('/logout', async (req, res, next) => {
+    const username = req.query.username;
+    req.session.userId = null;
+    console.log('[INFO] User logged out : ' + username);
+    res.json({message: "Logged out successfully"});
+});
+ 
 
 // Register a new user : POST /users/register?username=xxx&password=yyy
 router.post('/register', async (req, res, next) => {
@@ -79,14 +73,13 @@ router.post('/register', async (req, res, next) => {
         return res.status(400).json({ error: "Username already exists" });
     }
     const hashedPassword = await bcrypt.hash(password, saltRounds); 
-    const token = jwt.sign({id: id, username: username }, 'secret-key');
     const newUser = {
         id: id,
         username: username,
         password: hashedPassword,
+        profile_picture: 'backend/src/default.jpg',
         created_at: new Date().toISOString(),
-        token: token
-    };
+        };
     const allUsers = [...existedUsers, newUser];
     await dml.writeUsers(allUsers);
     console.log('[INFO] New user created : ' + username);
@@ -100,6 +93,7 @@ router.put('/update', async (req, res, next) => {
     const userId = req.query.id;
     const username = req.query.username;
     const password = req.query.password;
+    const hashedPassword = await bcrypt.hash(password, saltRounds);
     const user = existedUsers.find(user => parseInt(user.id) === parseInt(userId) || user.username === username);
 
     if (!user) {
@@ -111,13 +105,13 @@ router.put('/update', async (req, res, next) => {
             return {
                 ...user,
                 username: username || user.username,
-                password: password || user.password
+                password: hashedPassword || user.hashedPassword,
             }
         }
         return user;
     });
     await dml.writeUsers(allUsers);
-    res.json({user});
+    res.json({user, message: "Updated successfully"});
     if (userId) console.log('[INFO] User updated for ID : ' + userId);
     if (username) console.log('[INFO] User updated for username : ' + username);
 });
@@ -136,11 +130,10 @@ router.delete('/delete', async (req, res, next) => {
     }
     const allUsers = existedUsers.filter(user => parseInt(user.id) !== parseInt(userId) && user.username !== username);
     await dml.writeUsers(allUsers);
-    res.json({user});
+    res.json({user, message: "Deleted successfully"});
     if (userId) console.log('[INFO] User deleted for ID : ' + userId);
     if (username) console.log('[INFO] User deleted for username : ' + username);
 });
 
 
 module.exports = router;
-module.exports.authenticateUser = authenticateUser;

@@ -1,22 +1,4 @@
-// This file contains the functions to fetch data from the server
-
-// URL of the server
 const baseUrl = "http://localhost:5000/";
-
-// Function to fetch data from the server
-// async function fetchRoutines(url) {
-//     const urlFull = `${baseUrl}${url}`;
-//     console.log(`requesting: ${urlFull}`);
-//     try {
-//         const response = await fetch(urlFull);
-//         const result = await response.json();
-//         console.log(`result= ${JSON.stringify(result)}`);
-//         return result;
-//     } catch (error) {
-//         console.error(`Error: ${error}`);
-//         return null;
-//     }
-// }
 
 async function fetchRoutines(url) {
     const urlFull = baseUrl + url;
@@ -29,48 +11,54 @@ async function fetchRoutines(url) {
     return result;
 }
 
-// Functions to fetch users list 
-async function usersList() {
-    try {
-        const data = await fetchRoutines("users/list");
-        return data.items;
-    } catch (error) {
-        console.error(`Error: ${error}`);
-        return [];
-    }
+function saveRoutines(url, data) {
+    const urlFull = baseUrl + url;
+    console.log("posting: " + urlFull);
+    return fetch(urlFull,
+        {method: "POST",
+            headers: {"Content-Type" : "application/json"},
+            body: JSON.stringify(data)
+        }
+    );
+}function saveRoutines(url, data) {
+    const urlFull = baseUrl + url;
+    console.log("posting: " + urlFull);
+    return fetch(urlFull,
+        {method: "POST",
+            headers: {"Content-Type" : "application/json"},
+            body: JSON.stringify(data)
+        }
+    );
 }
 
-// Functions to fetch boards list
-async function boardsList() {
-    try {
-        const data = await fetchRoutines("boards/list");
-        return data.items;
-    } catch (error) {
-        console.error(`Error: ${error}`);
-        return [];
-    }
-}
-
-// // Functions to fetch tasks list
-// async function tasksList() {
-//     try {
-//         const data = await fetchRoutines("tasks/list"); // = result
-//         console.log(`data= ${JSON.stringify(data)}`); // = result
-//         console.log(`data.items= ${JSON.stringify(data.items)}`); // ?? undefined
-//         return data.items;  // ?? undefined
-//     } catch (error) {
-//         console.error(`Error: ${error}`);
-//         return [];
-//     }
-// }
-
-async function tasksList() {
-    const data = await fetchRoutines("tasks/list");
+async function readBoards(userID) {
+    const data = await fetchRoutines("boards/?user_id=" + userID);
     return data.items;
 }
 
+async function readTasks(boardID) {
+    const data = await fetchRoutines("tasks/?board_id=" + boardID);
+    return data.items;
+}
 
-// Export the functions
-module.exports.usersList    = usersList;
-module.exports.boardsList   = boardsList;
-module.exports.tasksList    = tasksList;
+async function login(username, password) {
+    const data = await fetchRoutines("users/login?username=" + username + "&password=" + password);
+    return data;
+}
+
+async function logout(username) {
+    const data = await fetchRoutines("users/logout?username=" + username);
+    return data;
+}
+
+async function register(username, password) {
+    const data = await fetchRoutines("users/register?username=" + username + "&password=" + password);
+    return data;
+}
+
+
+module.exports.readBoards = readBoards;
+module.exports.readTasks = readTasks;
+module.exports.login = login;
+module.exports.logout = logout;
+module.exports.register = register;

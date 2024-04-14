@@ -1,0 +1,56 @@
+.header {
+    background-color: #282c34;
+    color: white;
+    padding: 10px;
+    position: relative;
+  }
+  
+  .header h1 {
+    text-align: center;
+  }
+
+.burger {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    cursor: pointer;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #282c34;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-close {
+    transform: translateX(100%);
+}
+
+.nav-open {
+    transform: translateX(0);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    background-color: #111;
+}

@@ -1,0 +1,45 @@
+.not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #282c34;
+    color: #282c34;
+    text-align: center;
+}
+
+.not-found .circle {
+  background-color: white;
+  border-radius: 50%;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; 
+}
+
+.not-found h1 {
+    font-size: 6em;
+    margin: 0;
+}
+
+.not-found p {
+    font-size: 2em;
+}
+
+.not-found .home-button {
+    background-color: white;
+    color: #282c34;
+    border: none;
+    border-radius: 5%;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }

@@ -128,12 +128,12 @@ router.put('/update', async (req, res) => {
 
 // Boards attributes : 
 //const boardAttributes = {
-//    id: 'integer',          // Primary key
-//    name: 'string',         // Name of the board
-//    description: 'string',  // Description of the board
-//    user_id: 'integer',     // User ID of the board owner
-//    created_at: 'string',   // Created date of the board
-//    updated_at: 'string'    // Updated date of the board
+//    id: 'integer',            // Primary key
+//    name: 'string',           // Name of the board
+//    description: 'string',    // Description of the board
+//    user_id: 'integer',       // User ID of the board owner
+//    created_at: 'timestamp',  // Created date of the board
+//    updated_at: 'timestamp'   // Updated date of the board
 //};
 
 module.exports = router;

@@ -17,10 +17,11 @@ function verifyStatus(status) {
 router.get('/list', async (req, res, next) => {
     try {
         const tasks = await dml.readTasks();
-        res.status(200).json(tasks);
+        res.json({tasks});
         console.log('[INFO] All tasks retrieved');
-    } catch (err) {
-        next(err);
+    } catch (error) {
+        console.error("[ERROR]", error);
+        res.status(500).json({ error: "Internal server error" });
     }
 });
 
@@ -133,15 +134,15 @@ router.delete('/delete', async (req, res, next) => {
 
 // Tasks attributes : 
 //const taskAttributes = {
-//    id: 'integer',          // Primary key
-//    title: 'string',        // Title of the task
-//    description: 'string',  // Description of the task
-//    due_date: 'string',     // Due date of the task
-//    board_id: 'integer',    // Foreign key to board 
-//    user_id: 'integer',     // Foreign key to user
-//    status: 'string',       // Status of the task
-//    created_at: 'string',   // Created date of the task
-//    updated_at: 'string'    // Updated date of the task
+//    id: 'integer',            // Primary key
+//    title: 'string',          // Title of the task
+//    description: 'string',    // Description of the task
+//    due_date: 'string',       // Due date of the task
+//    board_id: 'integer',      // Foreign key to board 
+//    user_id: 'integer',       // Foreign key to user
+//    status: 'string',         // Status of the task
+//    created_at: 'timestamp',  // Created date of the task
+//    updated_at: 'timestamp'   // Updated date of the task
 //};
 
 module.exports = router;

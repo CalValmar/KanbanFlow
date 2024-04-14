@@ -4,8 +4,9 @@ const path = require('path');
 const rootPath = path.dirname(process.mainModule.filename);
 const dataPath = path.join(rootPath, "data");
 
-console.log("rootPath=" + rootPath);
-console.log("dataPath=" + dataPath);
+// Debugging
+// console.log("rootPath=" + rootPath);
+// console.log("dataPath=" + dataPath);
 
 // Data management layer constants
 const USERS = "users.json";

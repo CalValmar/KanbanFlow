@@ -55,6 +55,12 @@ router.post('/login', async (req, res, next) => {
 // Disconnect a user : POST /users/logout?username=xxx
 router.post('/logout', async (req, res, next) => {
     const username = req.query.username;
+    const existedUsers = await dml.readUsers();
+    const user = existedUsers.find(user => user.username === username);
+    if (!user) {
+        console.log(`[ERROR] User not found: ${username}`);
+        return res.status(404).json({ error: "User not found" });
+    }
     req.session.userId = null;
     console.log('[INFO] User logged out : ' + username);
     res.json({message: "Logged out successfully"});

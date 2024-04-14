@@ -71,7 +71,7 @@ router.delete('/delete', async (req, res, next) => {
     if (boardName) console.log('[INFO] Board deleted for name : ' + boardName);
 });
 
-// Update a name of a board by id : PUT /boards/update?id=xxx&name=yyy&description=zzz
+// Update a name or desc. of a board by id : PUT /boards/update?id=xxx&name=yyy&description=zzz
 router.put('/update', async (req, res, next) => {
     const boardId = req.query.id;
     const boardName = req.query.name;

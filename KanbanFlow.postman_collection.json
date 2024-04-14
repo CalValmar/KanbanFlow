@@ -1,0 +1,610 @@
+{
+	"info": {
+		"_postman_id": "af1b427c-233e-4e55-a861-addd0546b712",
+		"name": "KanbanFlow",
+		"description": "By Paul VIALAT @ Unicorn University Summer 2024",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34265920"
+	},
+	"item": [
+		{
+			"name": "Backend : 5000",
+			"item": [
+				{
+					"name": "Server-Routes",
+					"item": [
+						{
+							"name": "Users",
+							"item": [
+								{
+									"name": "All users info.",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5000/users/list",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"users",
+												"list"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "User info. by his id or username",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5000/users/?id=xxx&username=yyy",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"users",
+												""
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "xxx"
+												},
+												{
+													"key": "username",
+													"value": "yyy"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Login an existing user",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5000/users/login?username=xxx&password=yyy",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"users",
+												"login"
+											],
+											"query": [
+												{
+													"key": "username",
+													"value": "xxx"
+												},
+												{
+													"key": "password",
+													"value": "yyy"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Disconnect a user",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5000/users/logout?username=xxx",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"users",
+												"logout"
+											],
+											"query": [
+												{
+													"key": "username",
+													"value": "xxx"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Register a new user",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5000/users/register?username=xxx&password=yyy",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"users",
+												"register"
+											],
+											"query": [
+												{
+													"key": "username",
+													"value": "xxx"
+												},
+												{
+													"key": "password",
+													"value": "yyy"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update a user, name or password",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5000/users/update?id=xxx&username=yyy&password=zzz",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"users",
+												"update"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "xxx"
+												},
+												{
+													"key": "username",
+													"value": "yyy"
+												},
+												{
+													"key": "password",
+													"value": "zzz"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete a user by his name or id",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5000/users/delete?id=xxx&username=yyy",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"users",
+												"delete"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "xxx"
+												},
+												{
+													"key": "username",
+													"value": "yyy"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Boards",
+							"item": [
+								{
+									"name": "All boards info.",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5000/boards/list",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"boards",
+												"list"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Boards info by id or name or user_id",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5000/boards/?id=xxx&name=yyy&user_id=zzz",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"boards",
+												""
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "xxx"
+												},
+												{
+													"key": "name",
+													"value": "yyy"
+												},
+												{
+													"key": "user_id",
+													"value": "zzz"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create a new board",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5000/boards/create?name=board_name&description=board_description",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"boards",
+												"create"
+											],
+											"query": [
+												{
+													"key": "name",
+													"value": "board_name"
+												},
+												{
+													"key": "description",
+													"value": "board_description"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update a board",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5000/boards/update?id=xxx&name=yyy&description=zzz",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"boards",
+												"update"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "xxx"
+												},
+												{
+													"key": "name",
+													"value": "yyy"
+												},
+												{
+													"key": "description",
+													"value": "zzz"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete a board",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5000/boards/delete?id=xxx&name=yyy",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"boards",
+												"delete"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "xxx"
+												},
+												{
+													"key": "name",
+													"value": "yyy"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Tasks",
+							"item": [
+								{
+									"name": "All tasks info.",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5000/tasks/list",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"tasks",
+												"list"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Tasks info. by user_id or board_id",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5000/tasks/?user_id=xxx&board_id=yyy",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"tasks",
+												""
+											],
+											"query": [
+												{
+													"key": "user_id",
+													"value": "xxx"
+												},
+												{
+													"key": "board_id",
+													"value": "yyy"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create a new task",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5000/tasks/create?title=xxx&description=yyy&due_date=zzz&board_id=aaa&status=ccc",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"tasks",
+												"create"
+											],
+											"query": [
+												{
+													"key": "title",
+													"value": "xxx"
+												},
+												{
+													"key": "description",
+													"value": "yyy"
+												},
+												{
+													"key": "due_date",
+													"value": "zzz"
+												},
+												{
+													"key": "board_id",
+													"value": "aaa"
+												},
+												{
+													"key": "status",
+													"value": "ccc"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update a task",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5000/tasks/update?id=xxx&title=yyy&description=zzz&due_date=aaa&&status=bbb",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"tasks",
+												"update"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "xxx"
+												},
+												{
+													"key": "title",
+													"value": "yyy"
+												},
+												{
+													"key": "description",
+													"value": "zzz"
+												},
+												{
+													"key": "due_date",
+													"value": "aaa"
+												},
+												{
+													"key": null,
+													"value": null
+												},
+												{
+													"key": "status",
+													"value": "bbb"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete a task",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5000/tasks/delete?id=xxx",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"tasks",
+												"delete"
+											],
+											"query": [
+												{
+													"key": "id",
+													"value": "xxx"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "API /",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "API Health Status",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Frontend : 3000",
+			"item": [
+				{
+					"name": "App. Home",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

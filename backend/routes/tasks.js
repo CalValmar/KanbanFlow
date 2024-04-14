@@ -92,10 +92,15 @@ router.put('/update', async (req, res, next) => {
             if (title) task.title = title;
             if (description) task.description = description;
             if (dueDate) task.due_date = dueDate;
-            if (status) task.status = status;
-            await dml.writeTasks(tasks);
-            res.status(200).json(task);
-            console.log('[INFO] Task updated for ID : ' + taskId);
+            if (status) {
+                task.status = status;
+                await dml.writeTasks(tasks);
+                res.status(200).json(task);
+                console.log('[INFO] Task updated for ID : ' + taskId);
+            } else {
+                res.status(400).send('[WARNING] Invalid status');
+                console.log('[WARNING] Invalid status');
+            }
         } else {
             res.status(404).send('Task not found');
             console.log('[ERROR] Task not found');
@@ -125,5 +130,18 @@ router.delete('/delete', async (req, res, next) => {
         next(err);
     }
 });
+
+// Tasks attributes : 
+//const taskAttributes = {
+//    id: 'integer',          // Primary key
+//    title: 'string',        // Title of the task
+//    description: 'string',  // Description of the task
+//    due_date: 'string',     // Due date of the task
+//    board_id: 'integer',    // Foreign key to board 
+//    user_id: 'integer',     // Foreign key to user
+//    status: 'string',       // Status of the task
+//    created_at: 'string',   // Created date of the task
+//    updated_at: 'string'    // Updated date of the task
+//};
 
 module.exports = router;

@@ -1,0 +1,101 @@
+body {
+    background-color: #121212; /* Dark background */
+    color: white; /* White text */
+    font-family: Arial, sans-serif;
+}
+
+.home-page {
+    padding: 20px;
+}
+
+.home-section h1,
+.products-section h2,
+.services-section h2,
+.demo-section .title,
+.about-section .title {
+    background: -webkit-linear-gradient(right, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    background-clip: text; /* Standard property */
+    -webkit-text-fill-color: transparent;
+}
+
+.buttons-section a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #feb47b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.buttons-section a:hover {
+    background-color: #ff7e5f;
+}
+
+.section-separator {
+    border: 0;
+    border-top: 1px solid #333;
+    margin: 20px 0;
+}
+
+.product-item img,
+.service-item img {
+    width: 100%;
+    height: auto;
+}
+
+.product-features-list ul,
+.faq-wrapper {
+    list-style: none;
+    padding: 0;
+}
+
+.service-item {
+    margin-bottom: 20px;
+}
+
+.service-item a {
+    color: white;
+    text-decoration: none;
+}
+
+.demo-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #feb47b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.demo-button:hover {
+    background-color: #ff7e5f;
+}
+
+.title-gradient {
+    background: -webkit-linear-gradient(right, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    background-clip: text; /* Standard property */
+    -webkit-text-fill-color: transparent;
+}
+
+.faq-card {
+    margin-bottom: 20px;
+}
+
+.faq-card .card-button {
+    background: none;
+    border: none;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+}
+
+.faq-card .card-content {
+    margin-top: 10px;
+    color: #ccc;
+}

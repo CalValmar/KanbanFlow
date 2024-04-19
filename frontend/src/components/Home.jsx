@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import './Header.jsx';
 import './home.css';
 
+import { useContext } from 'react';
+import { NavContext } from './context';
+
 function Home() {
+  const { isOpen } = useContext(NavContext);
+
   return (
-    <div className="home-page">
+    <div className={`home-page ${isOpen ? 'blur' : ''}`}>
       {/* Home Section */}
       <div className="home-section">
         <h1>Welcome to My App</h1>

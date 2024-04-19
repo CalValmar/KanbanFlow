@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
+import { NavContext } from './components/context';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Dashboard from './components/dashboard/Dashboard';
@@ -28,9 +30,13 @@ function Main() {
 }
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <Router>
-      <Main />
+      <NavContext.Provider value={{ isOpen, setIsOpen }}>
+        <Main />
+      </NavContext.Provider>
     </Router>
   );
 }

@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './header.css';
 
+import { useContext } from 'react';
+import { NavContext } from './context';
+
 function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, setIsOpen } = useContext(NavContext);
 
   const toggleNav = () => {
     setIsOpen(!isOpen);

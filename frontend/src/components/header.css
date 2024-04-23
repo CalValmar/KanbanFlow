@@ -1,3 +1,10 @@
+:root {
+    --primary-color: #f4f4f4;
+    --secondary-color: #333;
+    --border-color: #333;
+    --border-color-transparent: #3333333e;
+  }
+
 /* Header Container */
 .header-container {
     font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -7,7 +14,7 @@
     background-color: black;
     color: white;
     height: 70px;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid var(--border-color-transparent);
     border-radius: 0 0 10px 10px;
 }
 
@@ -26,6 +33,7 @@
 
 /* Login button */
 .login-section a {
+    font-weight: bold;
     background: rgb(255,203,8);
     background: radial-gradient(circle, rgba(255,203,8,1) 0%, rgba(250,168,25,1) 35%, rgba(244,120,33,1) 100%);
     color: aliceblue;
@@ -70,7 +78,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 250px;
+    width: 275px;
     height: 100%;
     background-color: black;
     color: white;
@@ -84,7 +92,13 @@
 
 .nav-open hr {
     width: 100%;
-    border: 1px solid #333;
+    border: 1px solid var(--border-color-transparent);
+    border-radius: 100%;
+}
+
+.nav-close hr {
+    width: 100%;
+    border: 1px solid var(--border-color-transparent);
     border-radius: 100%;
 }
 
@@ -92,7 +106,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 300px;
+    width: 275px;
     height: 100%;
     background-color: black;
     color: white;
@@ -109,7 +123,7 @@
     justify-content: space-between;
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid var(--border-color-transparent);
 }
 
 .logo-container img {

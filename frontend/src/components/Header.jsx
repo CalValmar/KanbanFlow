@@ -74,13 +74,13 @@ function Header() {
           <Link to="#products">Products</Link>
             <ul>
               <li>
-                <Link to="/product1">Product 1</Link>
+                <Link to="/product1">Kanban board</Link>
               </li>
               <li>
-                <Link to="/product2">Product 2</Link>
+                <Link to="/product2">Time tracking</Link>
               </li>
               <li>
-                <Link to="/product3">Product 3</Link>
+                <Link to="/product3">Analytics & Reporting</Link>
               </li>
             </ul>
           <hr class="nav-separator" />
@@ -91,13 +91,13 @@ function Header() {
           <Link to="#services">Services</Link>
           <ul>
              <li>
-               <Link to="/service1">Service 1</Link>
+               <Link to="/service1">Software development</Link>
              </li>
              <li>
-               <Link to="/service2">Service 2</Link>
+               <Link to="/service2">Investigations</Link>
              </li>
              <li>
-               <Link to="/service3">Service 3</Link>
+               <Link to="/service3">Training courses</Link>
              </li>
           </ul>
           <hr class="nav-separator" />
@@ -109,7 +109,7 @@ function Header() {
             <Link to="#contact">Contact us</Link>
           </div>
           <div class="demo-nav">
-            <Link to="#demo">Try a demo</Link>
+            <Link to="#demo">Try the demo</Link>
           </div>
         </div>
 

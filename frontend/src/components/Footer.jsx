@@ -16,8 +16,13 @@ function Footer() {
           </ul>
         </div>
         {/* Copyright Section */}
-        <div class="copyright-section">
-          <p class="copyright-text">© KanbanFlow 2024</p>
+        <div className="copyright-section">
+          <p className="copyright-text">© KanbanFlow
+          <a href="#" onClick={(e) => {
+            e.preventDefault();
+            window.open('https://www.youtube.com/watch?v=e_IIORCnBxI&ab_channel=10HoursMovies', '_blank');
+          }} className="back-to-top"> 2024</a>
+          </p>
         </div>
       </div>
     </footer>

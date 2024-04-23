@@ -1,3 +1,11 @@
+:root {
+  --primary-color: #f4f4f4;
+  --secondary-color: #333;
+  --border-color: #333;
+  --border-color-transparent: #3333333e;
+}
+
+
 .footer-container {
   color: aliceblue;
 }
@@ -8,7 +16,7 @@
   justify-content: space-around;
   align-items: center;
   background-color: black;
-  border-top: 1px solid #333;
+  border-top: 1px solid var(--border-color-transparent);
   border-radius: 10px 10px 0 0;
 }
 
@@ -30,48 +38,52 @@
 }
 
 .footer-nav-list li a {
-  color: aliceblue;
+  background: aliceblue;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-decoration: none;
   position: relative;
-  transition: color 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out 0s;
 }
 
 .footer-nav-list li a::before {
   content: "";
   position: absolute;
   width: 100%;
-  height: 2px; 
-  bottom: 0; 
+  height: 2px;
+  bottom: 0;
   left: 0;
-  background-color: rgb(255,203,8);
-  background-color: linear-gradient(90deg, rgba(255,203,8,1) 0%, rgba(250,168,25,1) 40%, rgba(244,120,33,1) 100%);
+  background: linear-gradient(90deg, rgba(255,203,8,1) 0%, rgba(250,168,25,1) 40%, rgba(244,120,33,1) 100%);
   visibility: hidden;
-  -webkit-transform: scaleX(0);
   transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out 0s;
+  transform-origin: left center;
   transition: all 0.3s ease-in-out 0s;
 }
 
 .footer-nav-list li a:hover {
-  color: rgb(255,203,8);
-  color: radial-gradient(circle, rgba(255,203,8,1) 0%, rgba(250,168,25,0.6819277108433734) 40%, rgba(244,120,33,1) 100%);
+  background: linear-gradient(90deg, rgba(255,203,8,1) 0%, rgba(250,168,25,1) 40%, rgba(244,120,33,1) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .footer-nav-list li a:hover::before {
   visibility: visible;
-  -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
 
 .copyright-section {
   text-align: right;
 }
+
 .copyright-text {
-  color: rgb(255,203,8);
-  color: linear-gradient(90deg, rgba(255,203,8,1) 0%, rgba(250,168,25,1) 40%, rgba(244,120,33,1) 100%);
-  transition: text-shadow 0.3s ease;
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  background-clip: border-box;
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
 }
 
-.copyright-text:hover {
-  text-shadow: 2px 2px 4px rgb(255,203,8);
+.back-to-top {
+  text-decoration: none;
 }

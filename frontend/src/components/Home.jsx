@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { NavContext } from './context';
 import './Header.jsx';
 import './home.css';
 
-import { useContext } from 'react';
-import { NavContext } from './context';
 
 function Home() {
   const { isOpen } = useContext(NavContext);
@@ -12,8 +11,8 @@ function Home() {
     <div className={`home-page ${isOpen ? 'blur' : ''}`}>
       {/* Home Section */}
       <div className="home-section">
-        <h1>Welcome to My App</h1>
-        <p>All-in-one workspace — Write, plan, collaborate, and get organized.</p>
+        <h1><span className="gradient-text">Welcome to KanbanFlow</span></h1>
+        <p className="desc-text">Write, plan, collaborate, and get organized.</p>
       </div>
       
       {/* Buttons Section */}
@@ -26,36 +25,36 @@ function Home() {
       
       {/* Products Section */}
       <div id="products" className="products-section">
-        <h2>Our Products</h2>
-        <p>We develop products that help you and your team work together more efficiently.</p>
-      
+        <h2><span className="white-text">Our</span> <span className="gradient-text">Products</span></h2>
+        <p className="desc-text">We develop products that help you and your team work together more efficiently.</p>
+
         <div className="product-item">
-          <img src="/images/product1.jpg" alt="Product 1" />
-        </div>
-        <div className="product-features-list">
-          <ul>
-            <li>
-              <div className="feature-item">
-                <h4>Feature 1</h4>
-                <p>Feature 1 description</p>
-                <a href="https://github.com/CalValmar"> My GitHub Profile </a>
-              </div>
-            </li>
-            <li>
-              <div className="feature-item">
-                <h4>Feature 2</h4>
-                <p>Feature 2 description</p>
-                <a href="/#about">Learn More</a>
-              </div>
-            </li>
-            <li>
-              <div className="feature-item">
-                <h4>Feature 3</h4>
-                <p>Feature 3 description</p>
-                <a href="/#about">Learn More</a>
-              </div>
-            </li>
-          </ul>
+          <img src="https://predictalab.fr/images/products/predictasearch.jpeg" alt="Product 1" />
+          <div className="product-features-list">
+            <ul>
+              <li>
+                <div className="feature-item">
+                  <h4>Kanban board</h4>
+                  <p>Effortlessly manage tasks with customizable columns, WIP limits, subtasks, swimlanes, filters, recurring tasks, task relations, and automatic task archiving.</p>
+                  <a href="https://github.com/CalValmar"> My GitHub Profile</a>
+                </div>
+              </li>
+              <li>
+                <div className="feature-item">
+                  <h4>Time tracking</h4>
+                  <p>Efficiently manage your time with customizable timers including Pomodoro technique and Stopwatch, track time spent on tasks, generate detailed</p>
+                  <a href="/#about">Learn More</a>
+                </div>
+              </li>
+              <li>
+                <div className="feature-item">
+                  <h4>Analytics & Reporting</h4>
+                  <p>Gain deep insights into your workflow with customizable charts, calendar views, dashboards, and forecasting, optimizing productivity and performance tracking.</p>
+                  <a href="/#about">Learn More</a>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -63,19 +62,19 @@ function Home() {
 
       {/* Services Section */}
       <div id="services" className="services-section">
-        <h2>Our Services</h2>
-        <p>Whether you need help with a project or ongoing support, we can help.</p>
+        <h2><span className="white-text">Our</span> <span className="gradient-text">Services</span></h2>
+        <p className="desc-text">Whether you need help with a project or ongoing support, we can help.</p>
       </div>
       <div className="services-wrapper">
         {/* Service 1 */}
         <div className="service-item">
           <a href="/#service1">
             <div className="service-image">
-              <img src="/images/service1.jpg" alt="Service 1" />
+              <img src="https://predictalab.fr/images/services/dev.jpg" alt="Service 1" />
             </div>
             <div className="service-content">
-              <h4 className="service-title">Service 1</h4>
-              <p className="service-description">Service 1 description</p>
+              <h4 className="service-title">Software development</h4>
+              <p className="service-description">We can help you build custom software solutions that meet your unique needs.</p>
             </div>
           </a>
         </div>
@@ -83,11 +82,11 @@ function Home() {
         <div className="service-item">
           <a href="/#service2">
             <div className="service-image">
-              <img src="/images/service2.jpg" alt="Service 2" />
+              <img src="https://predictalab.fr/images/services/investigations.jpg" alt="Service 2" />
             </div>
             <div className="service-content">
-              <h4 className="service-title">Service 2</h4>
-              <p className="service-description">Service 2 description</p>
+              <h4 className="service-title">Investigations</h4>
+              <p className="service-description">We can help you investigate and resolve complex technical issues.</p>
             </div>
           </a>
         </div>
@@ -95,11 +94,11 @@ function Home() {
         <div className="service-item">
           <a href="/#service3">
             <div className="service-image">
-              <img src="/images/service3.jpg" alt="Service 3" />
+              <img src="https://predictalab.fr/images/services/formation.jpg" alt="Service 3" />
             </div>
             <div className="service-content">
-              <h4 className="service-title">Service 3</h4>
-              <p className="service-description">Service 3 description</p>
+              <h4 className="service-title">Training courses</h4>
+              <p className="service-description">We teach you how to use our products and services to get the most out of them.</p>
             </div>
           </a>
         </div>
@@ -108,57 +107,53 @@ function Home() {
       <hr className="section-separator" />
 
       {/* Demo Section */}
-      <div id="demo" className="demo-section">
-        <h2 className="title">Want a live demo?</h2>
-        <p className="description">Reach out and we will get back to you in no time.</p>
-        <button className="demo-button">Book a meeting</button>
-      </div>
+     <div className="demo-wrapper">
+        <div id="demo" className="demo-section">
+          <h2 className="title">Want a live demo ?</h2>
+          <p className="description">Reach out and we will get back to you in no time.</p>
+          <button className="demo-button"> Book a meeting </button>
+        </div>
+     </div>
 
       <hr className="section-separator" />
 
-      {/* About Section */}
+      {/* FAQ Section */}
       <div id="about" className="about-section">
-        <h2 className="title">About
-          <span className="title-gradient"> Us</span>
-        </h2>
-        <p className="description">We are a team of professionals who are passionate about what we do.</p>
-        <p className="description">We are dedicated to helping you and your team work together more efficiently.</p>
-        <div className="faq-wrapper">
-          {/* FAQ 1 */}
-          <div className="faq-card">
-            <div className="card-header">
-              <button type='button' className="card-button">What is KanbanFlow?</button>
-            </div>
-            <div className="card-content">
-              "KanbanFlow is a project management tool that helps you visualize your work and collaborate with your team."
-            </div>
+        <h2><span className="white-text">About</span> <span className="gradient-text"> Us </span></h2>
+        <p className="desc-text">Here are some of the most frequently asked questions about our services.</p>
+        <p className="desc-text">If you have any other questions, feel free to reach out to us.</p>
+      </div>
+      <div className="about-wrapper">
+        {/* FAQ 1 */}
+        <div className="about-item">
+          <div className="about-content">
+            <h4 className="about-title">What is KanbanFlow ?</h4>
+            <hr className="about-separator" />
+            <p className="about-description">KanbanFlow is a project management tool that helps you visualize your work and collaborate ! </p>
           </div>
-          {/* FAQ 2 */}
-          <div className="faq-card">
-            <div className="card-header">
-              <button type='button' className="card-button">How do I get started?</button>
-            </div>
-            <div className="card-content">
-              "You can get started by creating an account and signing in."
-            </div>
+        </div>
+        {/* FAQ 2 */}
+        <div className="about-item">
+          <div className="about-content">
+            <h4 className="about-title">How do I get started ?</h4>
+            <hr className="about-separator" />
+            <p className="about-description">You can get started by creating an account and signing in.</p>
           </div>
-          {/* FAQ 3 */}
-          <div className="faq-card">
-            <div className="card-header">
-              <button type='button' className="card-button">How much does it cost?</button>
-            </div>
-            <div className="card-content">
-              "KanbanFlow is free to use."
-            </div>
+        </div>
+        {/* FAQ 3 */}
+        <div className="about-item">
+          <div className="about-content">
+            <h4 className="about-title">How much does it cost ?</h4>
+            <hr className="about-separator" />
+            <p className="about-description">KanbanFlow is free to use :3</p>
           </div>
-          {/* FAQ 4 */}
-          <div className="faq-card">
-            <div className="card-header">
-              <button type='button' className="card-button">How can I contact support?</button>
-            </div>
-            <div className="card-content">
-              "You can contact support by sending an email to "". We will get back to you as soon as possible."
-            </div>
+        </div>
+        {/* FAQ 4 */}
+        <div className="about-item">
+          <div className="about-content">
+            <h4 className="about-title">How can I contact support ?</h4>
+            <hr className="about-separator" />
+            <p className="about-description">You can contact the support. We will get back to you as soon as possible !</p>
           </div>
         </div>
       </div>

@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 import { NavContext } from './components/context';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Dashboard from './components/dashboard/Dashboard';
+import Dashboard from './components/logged/dashboard/Dashboard';
 import Login from './components/security/Login';
 import Register from './components/security/Register';
 import NotFound from './components/NotFound';
-import Home from './components/Home'; // Import the Home component
+import Home from './components/Home';
 
 import './App.css';
 
@@ -18,7 +18,7 @@ function Main() {
     <div>
       {location.pathname !== "*" && <Header />}
       <Routes>
-        <Route path="/" element={<Home />} /> {/* Use the Home component */}
+        <Route path="/" element={<Home />} /> 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />

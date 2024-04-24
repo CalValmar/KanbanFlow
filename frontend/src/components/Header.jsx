@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import './header.css';
-
 import { useContext } from 'react';
 import { NavContext } from './context';
+import { Link } from 'react-router-dom';
+import './header.css';
 
 function Header() {
   const { isOpen, setIsOpen } = useContext(NavContext);
@@ -112,7 +110,6 @@ function Header() {
             <Link to="#demo">Try the demo</Link>
           </div>
         </div>
-
       </nav>
     </header>
   );

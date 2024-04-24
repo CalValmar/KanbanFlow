@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { readBoards, getUserID } from '../../data/dataManagementLayer';
+import { readBoards, getUserID } from '../../../data/dataManagementLayer';
 
 function Dashboard() {
   const [boards, setBoards] = useState([]);

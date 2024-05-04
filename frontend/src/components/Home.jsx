@@ -17,7 +17,7 @@ function Home() {
       
       {/* Buttons Section */}
       <div className="buttons-section">
-        <a className="get-started-button" href="/login">Get Started</a>
+        <a className="get-started-button" href="/register">Get Started</a>
         <a className="learn-more-button" href="/#about">Learn More</a>
       </div>
       
@@ -36,7 +36,7 @@ function Home() {
                 <div className="feature-item">
                   <h4>Kanban board</h4>
                   <p>Effortlessly manage tasks with customizable columns, WIP limits, subtasks, swimlanes, filters, recurring tasks, task relations, and automatic task archiving.</p>
-                  <a href="https://github.com/CalValmar"> My GitHub Profile</a>
+                  <a href="/#about">Learn More</a>
                 </div>
               </li>
               <li>
@@ -68,7 +68,7 @@ function Home() {
       <div className="services-wrapper">
         {/* Service 1 */}
         <div className="service-item">
-          <a href="/#service1">
+          <a href="https://github.com/CalValmar">
             <div className="service-image">
               <img src="https://predictalab.fr/images/services/dev.jpg" alt="Service 1" />
             </div>
@@ -80,7 +80,7 @@ function Home() {
         </div>
         {/* Service 2 */}
         <div className="service-item">
-          <a href="/#service2">
+          <a href="https://github.com/CalValmar">
             <div className="service-image">
               <img src="https://predictalab.fr/images/services/investigations.jpg" alt="Service 2" />
             </div>
@@ -92,7 +92,7 @@ function Home() {
         </div>
         {/* Service 3 */}
         <div className="service-item">
-          <a href="/#service3">
+          <a href="https://github.com/CalValmar">
             <div className="service-image">
               <img src="https://predictalab.fr/images/services/formation.jpg" alt="Service 3" />
             </div>

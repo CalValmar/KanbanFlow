@@ -22,16 +22,16 @@ router.get('/', async (req, res) => {
     const boardName = req.query.name;
     const userId = req.query.user_id;
 
-    try { // Retrieve the board by the board ID or name or user ID
+    try { // Retrieve the boards by the board ID or name or user ID
         const boards = await dml.readBoards();
-        const board = boards.find(board => parseInt(board.id) === parseInt(boardId) || board.name === boardName || parseInt(board.user_id) === parseInt(userId));
-        if (!board) {
-            return res.status(404).json({ error: "Board not found" });
+        const filteredBoards = boards.filter(board => parseInt(board.id) === parseInt(boardId) || board.name === boardName || parseInt(board.user_id) === parseInt(userId));
+        if (filteredBoards.length === 0) {
+            return res.status(404).json({ error: "No boards found" });
         }
-        res.json({board});
-        if (boardId) console.log('[INFO] Board retrieved for ID : ' + boardId);
-        if (boardName) console.log('[INFO] Board retrieved for name : ' + boardName);
-        if (userId) console.log('[INFO] Board retrieved for user ID : ' + userId);
+        res.json({filteredBoards});
+        if (boardId) console.log('[INFO] Boards retrieved for ID : ' + boardId);
+        if (boardName) console.log('[INFO] Boards retrieved for name : ' + boardName);
+        if (userId) console.log('[INFO] Boards retrieved for user ID : ' + userId);
     } catch (error) {
         console.error("[ERROR]", error);
         res.status(500).json({ error: "Internal server error" });
@@ -39,16 +39,15 @@ router.get('/', async (req, res) => {
 });
 
 
-// Create a new board : POST /boards/create?name=board_name&description=board_description
-router.post('/create', authenticateUser, async (req, res) => {
+// Create a new board : POST /boards/create?user_id=0&name=board_name&description=board_description
+router.post('/create', async (req, res) => {
     try {
         const existedBoards = await dml.readBoards();
-        const userId = req.session.userId;
-        
+        const userId = parseInt(req.query.user_id);
         const name = req.query.name;
         const description = req.query.description;
         
-        if (!name || !description) {
+        if (!name || !description || !userId) {
             return res.status(400).json({ error: "Missing parameters" });
         }
         

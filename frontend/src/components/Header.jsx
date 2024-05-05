@@ -63,13 +63,13 @@ function Header() {
 
         {/* About Navigation */}
         <div class="about-nav">
-          <Link to="#about">About</Link>
+          <Link to="/#about">About</Link>
           <hr class="nav-separator" />
         </div>
 
         {/* Products Navigation */}
         <div class="products-nav">
-          <Link to="#products">Products</Link>
+          <Link to="/#products">Products</Link>
             <ul>
               <li>
                 <Link to="/product1">Kanban board</Link>
@@ -86,7 +86,7 @@ function Header() {
 
         {/* Services Navigation */}
         <div class="services-nav">
-          <Link to="#services">Services</Link>
+          <Link to="/#services">Services</Link>
           <ul>
              <li>
                <Link to="/service1">Software development</Link>
@@ -104,10 +104,10 @@ function Header() {
         {/* Contact and Demo Navigation */}
         <div class="nav-links">
           <div class="contact-nav">
-            <Link to="#contact">Contact us</Link>
+            <Link to="/#contact">Contact us</Link>
           </div>
           <div class="demo-nav">
-            <Link to="#demo">Try the demo</Link>
+            <Link to="/#demo">Try the demo</Link>
           </div>
         </div>
       </nav>

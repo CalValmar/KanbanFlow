@@ -8,6 +8,7 @@ import Login from './components/security/Login';
 import Register from './components/security/Register';
 import NotFound from './components/NotFound';
 import Home from './components/Home';
+import BoardDetails from './components/logged/dashboard/board/BoardDetails';
 
 import './App.css';
 
@@ -22,9 +23,10 @@ function Main() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/boards/:id" element={<BoardDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      {location.pathname !== "*" && <Footer />}
+      {location.pathname !== "/dashboard" && !location.pathname.startsWith("/boards/") && <Footer />}
     </div>
   );
 }

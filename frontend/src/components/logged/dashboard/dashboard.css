@@ -1,60 +1,183 @@
 /* Dashboard Page */
-.dashboard-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+.dashboard {
     font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #f4f4f4;
+    padding: 20px;
+    background-color: var(--color-background-dark);
+    color: var(--text-color);
 }
+
+.dashboard-blur {
+    filter: blur(8px);
+}   
 
 .dashboard-title {
-    font-size: 2em;
-    color: #444;
-    margin-bottom: 20px;
+    color: var(--text-color);
+    text-align: center;
 }
 
-.dashboard-separator {
-    width: 80%;
-    border: 0;
-    border-top: 1px solid #ddd;
-    margin: 20px 0;
+.dashboard-user-id {
+    color: var(--desc-color);
+    text-align: center;
 }
 
-.dashboard-boards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.boards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    width: 80%;
+    padding: 0 10px;
 }
 
-[class^="dashboard-board-"] {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.board-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.board {
+    border: 1px solid var(--border-color-transparent);
+    border-radius: 12px;
     padding: 20px;
-    width: calc(50% - 20px);
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 10px;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    background-color: var(--smooth-dark);
 }
 
-[class^="dashboard-board-"]:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.board:hover {
+    box-shadow: var(--box-shadow-sunset);
+    background-color: #333333a0;
 }
 
-[class^="dashboard-board-"] h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    text-align: left;
+.label {
+    color: #FDB813;
+    text-shadow: var(--text-shadow);
+    font-weight: bold;
 }
 
-[class^="dashboard-board-"] p {
-    margin-bottom: 10px;
-    color: #666;
-    text-align: left;
+.name,
+.description,
+.created-at,
+.updated-at {
+    color: var(--text-color);
+}
+
+.board-divider {
+    border: 0;
+    height: 1px;
+    background: var(--secondary-gradient);
+    margin: 15px 0;
+}
+
+
+.board-delete-button {
+    background: #FDB813;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-right: 5px;
+}
+
+.board-delete-button:hover {
+    background: #FFA500;
+}
+
+.board-update-button {
+    background: #FDB813;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-left: 5px;
+}
+
+.board-update-button:hover {
+    background: #FFA500;
+}
+
+.board-update-form {
+    margin-top: 20px;
+}
+
+.board-update-form input {
+    padding: 10px 20px;
+    margin: 10px 0 10px 0;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: #333;
+    color: #FDB813;
+    border: 1px solid #FDB813;
+}
+
+.board-update-form button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background: #FDB813;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.board-update-form button:hover {
+    background: #FFA500;
+}
+
+@keyframes slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dashboard-divider {
+    border: 0;
+    height: 1px;
+    background: var(--secondary-gradient);
+    margin: 15px 20px;
+}
+
+.board-add-form {
+    position: sticky;
+    border: 1px solid var(--border-color-transparent);
+    border-radius: 12px;
+    bottom: 0;
+    z-index: 1;
+    padding: 20px;
+    margin-top: 10px;
+    background-color: var(--color-background-dark);
+}
+
+.board-name-input,
+.board-description-input {
+    padding: 10px 20px;
+    margin: 10px 0 10px 0;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: #333;
+    color: #FDB813;
+    border: 1px solid #FDB813;
+}
+
+.board-add-button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background: #FDB813;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.board-add-button:hover {
+    background: #FFA500;
 }

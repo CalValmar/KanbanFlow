@@ -30,7 +30,6 @@
     text-shadow: var(--text-shadow);
 }
 
-
 .task-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -41,16 +40,15 @@
     padding: 20px;
 }
 
-.task-column__title {
-    color: var(--text-color);
+.task-column:not(:last-child) {
+    border-right: 1px solid var(--border-color-transparent);
 }
 
-.board-divider {
-    border: 0;
-    height: 1px;
-    background: var(--secondary-gradient);
-    margin: 15px 20px;
-    margin-bottom: 0;
+.task-column-title {
+    color: var(--text-color);
+    text-align: center;
+    font-size: xx-large;
+    margin: 0;
 }
 
 .tasks-divider {
@@ -60,14 +58,43 @@
     margin: 15px 20px;
 }
 
-
-
-
 .task-divider {
     border: 0;
     height: 1px;
     background: var(--secondary-gradient);
     margin: 15px 0;
+}
+
+.board-details__tasks {
+    border: 1px solid var(--border-color-transparent);
+    border-radius: 12px;
+    margin: 10px;
+    background-color: var(--smooth-dark);
+}
+
+.board-details__task {
+    border: 1px solid var(--border-color-transparent);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 10px;
+    background-color: var(--smooth-dark);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.board-details__task:hover {
+    box-shadow: var(--box-shadow-sunset);
+    background-color: #333333a0;
+}
+
+.board-details__task-title,
+.board-details__task-description,
+.board-details__task-due-date,
+.board-details__task-status, 
+.board-details__task-created-at,
+.board-details__task-updated-at {
+    color: var(--text-color);
+    text-shadow: var(--text-shadow);
+    margin: 10px 0;
 }
 
 .task-delete-button,
@@ -90,17 +117,17 @@
 }
 
 .task-update-form {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
-.board-add-form {
+.task-add-form {
     position: sticky;
     border: 1px solid var(--border-color-transparent);
     border-radius: 12px;
     bottom: 0;
     z-index: 1;
     padding: 20px;
-    margin: 10px 10px;
+    margin-top: 10px;
     background-color: var(--color-background-dark);
 }
 

@@ -102,7 +102,7 @@ function BoardDetails() {
             </p>
         </section>
     )}
-    <hr className="board-divider" />
+    <hr className="tasks-divider" />
     {/* Display the tasks */}
     {tasks.length > 0 ? (
     <section className="board-details__tasks">

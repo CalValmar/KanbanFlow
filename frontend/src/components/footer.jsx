@@ -9,9 +9,9 @@ function Footer() {
         {/* Footer Navigation */}
         <div class="footer-nav-container">
           <ul class="footer-nav-list">
-            <li><a href="/#products">Products</a></li>
-            <li><a href="/#services">Services</a></li>
-            <li><a href="/#about">About</a></li>
+            <li><a href="/privacy">Privacy</a></li>
+            <li><a href="/legal-notice">Legal Notice</a></li>
+            <li><a href="/term-of-use">Term of Use</a></li>
             <li><a href="/#contact">Contact</a></li>
           </ul>
         </div>
@@ -20,7 +20,7 @@ function Footer() {
           <p className="copyright-text">© KanbanFlow
           <a href="#" onClick={(e) => {
             e.preventDefault();
-            window.open('https://www.youtube.com/watch?v=e_IIORCnBxI&ab_channel=10HoursMovies', '_blank');
+            window.open('https://www.youtube.com/watch?v=BBJa32lCaaY', '_blank');
           }} className="back-to-top"> 2024</a>
           </p>
         </div>

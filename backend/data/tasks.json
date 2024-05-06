@@ -1,1 +1,92 @@
-[{"id":1,"title":"Design Home Page","description":"Design the layout for the home page","due_date":"07/05/2024","status":"To Do","board_id":1,"created_at":"2024-05-05T21:41:03.805Z","updated_at":"2024-05-05T21:41:03.805Z"},{"id":2,"title":"Implement Login Functionality","description":"Write the code for the login functionality","due_date":"07/05/2024","status":"In-Progress","board_id":2,"created_at":"2024-05-05T21:41:13.137Z","updated_at":"2024-05-05T21:41:13.137Z"}]
+[
+    {
+        "id": 1,
+        "title": "Design Home Page",
+        "description": "Design the layout for the home page",
+        "due_date": "07-05-2024",
+        "status": "To-Do",
+        "board_id": 1,
+        "created_at": "2024-05-05T21:41:03.805Z",
+        "updated_at": "2024-05-05T21:41:03.805Z"
+    },
+    {
+        "id": 2,
+        "title": "Implement Login Functionality",
+        "description": "Write the code for the login functionality",
+        "due_date": "07-05-2024",
+        "status": "In-Progress",
+        "board_id": 1,
+        "created_at": "2024-05-05T21:41:13.137Z",
+        "updated_at": "2024-05-05T21:41:13.137Z"
+    },
+    {
+        "id": 3,
+        "title": "Create Database Schema",
+        "description": "Design the database schema for the application",
+        "due_date": "07-05-2024",
+        "status": "Done",
+        "board_id": 1,
+        "created_at": "2024-05-05T21:41:21.682Z",
+        "updated_at": "2024-05-05T21:41:21.682Z"
+    },
+    {
+        "id": 4,
+        "title": "Design Logo",
+        "description": "Create a logo for the application",
+        "due_date": "07-05-2024",
+        "status": "To-Do",
+        "board_id": 2,
+        "created_at": "2024-05-05T21:41:30.366Z",
+        "updated_at": "2024-05-05T21:41:30.366Z"
+    },
+    {
+        "id": 5,
+        "title": "Implement User Registration",
+        "description": "Write the code for user registration",
+        "due_date": "07-05-2024",
+        "status": "In-Progress",
+        "board_id": 2,
+        "created_at": "2024-05-05T21:41:38.982Z",
+        "updated_at": "2024-05-05T21:41:38.982Z"
+    },
+    {
+        "id": 6,
+        "title": "Create API Endpoints",
+        "description": "Implement the API endpoints for the application",
+        "due_date": "07-05-2024",
+        "status": "Done",
+        "board_id": 2,
+        "created_at": "2024-05-05T21:41:47.682Z",
+        "updated_at": "2024-05-05T21:41:47.682Z"
+    },
+    {
+        "id": 7,
+        "title": "Design Mobile App UI",
+        "description": "Design the user interface for the mobile app",
+        "due_date": "07-05-2024",
+        "status": "To-Do",
+        "board_id": 3,
+        "created_at": "2024-05-05T21:41:56.366Z",
+        "updated_at": "2024-05-05T21:41:56.366Z"
+    },
+    {
+        "id": 8,
+        "title": "Implement Push Notifications",
+        "description": "Write the code for push notifications",
+        "due_date": "07-05-2024",
+        "status": "In-Progress",
+        "board_id": 3,
+        "created_at": "2024-05-05T21:42:04.982Z",
+        "updated_at": "2024-05-05T21:42:04.982Z"
+    },
+    {
+        "id": 9,
+        "title": "Test Application",
+        "description": "Perform testing on the application",
+        "due_date": "07-05-2024",
+        "status": "Done",
+        "board_id": 3,
+        "created_at": "2024-05-05T21:42:13.682Z",
+        "updated_at": "2024-05-05T21:42:13.682Z"
+    }
+]

@@ -30,7 +30,7 @@ function Home() {
         <p className="desc-text">We develop products that help you and your team work together more efficiently.</p>
 
         <div className="product-item">
-          <img src="https://predictalab.fr/images/products/predictasearch.jpeg" alt="Product 1" />
+          <img src="https://cdn.discordapp.com/attachments/1024213058370945044/1237093748480016515/telechargement_1.png?ex=663a64d5&is=66391355&hm=fe8f134acd2a8ccbea76a5a103faa17042b3bf54cfbf2d538ae950d6d0edde9f&" alt="Product 1" />
           <div className="product-features-list">
             <ul>
               <li>

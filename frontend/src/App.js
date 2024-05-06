@@ -37,8 +37,13 @@ function Main() {
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-  const [username, setUsername] = useState('Gus');
-  const [password, setPassword] = useState('dead');
+  const [username, setUsername] = useState(localStorage.getItem('username') || '');
+  const [password, setPassword] = useState(localStorage.getItem('password') || '');
+
+  React.useEffect(() => {
+    localStorage.setItem('username', username);
+    localStorage.setItem('password', password);
+  }, [username, password]);
 
   return (
     <Router>

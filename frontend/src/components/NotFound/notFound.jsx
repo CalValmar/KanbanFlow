@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { NavContext } from './context';
-import './Header.jsx';
-import './notfound.css';
+import { NavContext } from '../context.js';
+import '../header.jsx';
+import './Styles/notFound.css';
 
 function NotFound() {
   const { isOpen } = useContext(NavContext);

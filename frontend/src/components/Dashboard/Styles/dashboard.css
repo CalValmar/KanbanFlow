@@ -181,3 +181,11 @@
 .board-add-button:hover {
     background: #FFA500;
 }
+
+.boards-empty-message {
+    color: var(--text-color);
+    text-shadow: var(--text-shadow);
+    text-align: center;
+    margin: 20px;
+    font-size: x-large;
+}

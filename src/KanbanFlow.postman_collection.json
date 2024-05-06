@@ -247,7 +247,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "http://localhost:5000/boards/?id=xxx&name=yyy&user_id=zzz",
+											"raw": "http://localhost:5000/boards/?id=xxx",
 											"protocol": "http",
 											"host": [
 												"localhost"
@@ -264,11 +264,13 @@
 												},
 												{
 													"key": "name",
-													"value": "yyy"
+													"value": "yyy",
+													"disabled": true
 												},
 												{
 													"key": "user_id",
-													"value": "zzz"
+													"value": "zzz",
+													"disabled": true
 												}
 											]
 										}
@@ -281,7 +283,7 @@
 										"method": "POST",
 										"header": [],
 										"url": {
-											"raw": "http://localhost:5000/boards/create?name=board_name&description=board_description",
+											"raw": "http://localhost:5000/boards/create?user_id=3&name=board_name&description=board_description",
 											"protocol": "http",
 											"host": [
 												"localhost"
@@ -292,6 +294,10 @@
 												"create"
 											],
 											"query": [
+												{
+													"key": "user_id",
+													"value": "3"
+												},
 												{
 													"key": "name",
 													"value": "board_name"
@@ -586,23 +592,143 @@
 			"name": "Frontend : 3000",
 			"item": [
 				{
-					"name": "App. Home",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								""
+					"name": "App. KanbanFlow",
+					"item": [
+						{
+							"name": "Dashboard",
+							"item": [
+								{
+									"name": "BoardDetails",
+									"item": [
+										{
+											"name": "BoardDetails",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "http://localhost:3000/{`/boards/${userId}/${board.id}`}",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "3000",
+													"path": [
+														"{`",
+														"boards",
+														"${userId}",
+														"${board.id}`}"
+													],
+													"query": [
+														{
+															"key": "'/'",
+															"value": null,
+															"disabled": true
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Dashboard",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:3000/dashboard",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"dashboard"
+											]
+										}
+									},
+									"response": []
+								}
 							]
+						},
+						{
+							"name": "Home",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "NotFound",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/*",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"*"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				}
 			]
 		}

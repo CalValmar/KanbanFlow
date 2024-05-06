@@ -1,7 +1,8 @@
 import { useContext } from 'react';
 import { NavContext } from './context';
 import { Link } from 'react-router-dom';
-import './header.css';
+
+import './Styles/header.css';
 
 function Header() {
   const { isOpen, setIsOpen } = useContext(NavContext);

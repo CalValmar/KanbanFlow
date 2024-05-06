@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
-import { NavContext } from './context';
-import './Header.jsx';
-import './home.css';
+import { NavContext } from './context.js';
+
+import './header.jsx';
+import './Styles/home.css';
 
 
 function Home() {

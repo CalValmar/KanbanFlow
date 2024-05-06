@@ -86,6 +86,14 @@
     background-color: #333333a0;
 }
 
+.board-details__no-tasks {
+    color: var(--text-color);
+    text-shadow: var(--text-shadow);
+    text-align: center;
+    margin: 20px;
+    font-size: xx-large;
+}
+
 .board-details__task-title,
 .board-details__task-description,
 .board-details__task-due-date,

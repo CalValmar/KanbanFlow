@@ -3,8 +3,7 @@ node_modules/
 package-lock.json
 npm-debug.log
 
-# Ignore les fichiers de données
-database.js
+# Ignore les fichiers de données
 backend/data/boards.json
 backend/data/tasks.json
 backend/data/users.json
@@ -18,3 +17,25 @@ backend/data/users.json
 
 # Ignore les fichiers d'éditeur spécifiques (par exemple, les fichiers créés par Visual Studio Code)
 .vscode/
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { readBoard, readTasks, createTask, deleteTask, updateTask } from '../../../../data/dataManagementLayer';
+import { readBoard, readTasks, createTask, deleteTask, updateTask } from '../../data/dataManagementLayer';
 
-import './boarddetails.css';
+import './Styles/boardDetails.css';
 
 function BoardDetails() {
     const { userId, boardId } = useParams();

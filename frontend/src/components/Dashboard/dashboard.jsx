@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { createBoard, deleteBoard, getUserID, readBoards, updateBoard } from '../../../data/dataManagementLayer';
-import { UserContext, NavContext } from '../../../components/context';
+import { createBoard, deleteBoard, getUserID, readBoards, updateBoard } from '../../data/dataManagementLayer';
+import { UserContext, NavContext } from '../context';
 import { Link } from 'react-router-dom';
 
-import './dashboard.css';
+import './Styles/dashboard.css';
 
 function Dashboard() {
   const { isOpen } = useContext(NavContext);
@@ -126,7 +126,7 @@ function Dashboard() {
           </form>
         )}
       </div>
-      )) : <p className="boards-empty-message">No boards to display</p>}
+      )) : <p className="boards-empty-message">No boards to display, create one ! </p> }
       </div>
       <hr className="dashboard-divider" />
       <form className="board-add-form" onSubmit={handleAddBoard}>

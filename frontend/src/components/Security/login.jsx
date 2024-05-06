@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react';
 import axios from 'axios';
-import { UserContext } from '../../components/context';
-import { NavContext } from '../../components/context';
+import { UserContext } from '../context';
+import { NavContext } from '../context';
 import { Link, useNavigate } from 'react-router-dom';
 
-import './login.css';
+import './Styles/login.css';
 
 const Login = () => {
   const { setUsername, setPassword } = useContext(UserContext);

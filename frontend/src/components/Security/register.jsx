@@ -1,9 +1,9 @@
 import React, { useState, useContext } from 'react';
-import { NavContext } from '../../components/context';
+import { NavContext } from '../context';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 
-import './register.css';
+import './Styles/register.css';
 
 const Register = () => {
   const [usernameInput, setUsernameInput] = useState('');

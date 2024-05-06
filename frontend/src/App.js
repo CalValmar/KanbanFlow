@@ -1,14 +1,18 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import React, { useState } from 'react';
 import { NavContext, UserContext } from './components/context';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Dashboard from './components/logged/dashboard/Dashboard';
-import Login from './components/security/Login';
-import Register from './components/security/Register';
-import NotFound from './components/NotFound';
-import Home from './components/Home';
-import BoardDetails from './components/logged/dashboard/board/BoardDetails';
+
+import Login from './components/Security/login';
+import Register from './components/Security/register';
+
+import Header from './components/header';
+import Footer from './components/footer';
+
+import Home from './components/home';
+import Dashboard from './components/Dashboard/dashboard';
+import BoardDetails from './components/BoardDetails/boardDetails';
+
+import NotFound from './components/NotFound/notFound';
 
 import './App.css';
 

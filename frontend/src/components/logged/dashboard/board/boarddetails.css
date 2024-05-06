@@ -1,0 +1,141 @@
+/* Board Details Page */
+.board-details {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: var(--color-background-dark);
+    color: var(--text-color);
+}
+
+.board-details-blur {
+    filter: blur(8px);
+}
+
+.board-details__info {
+    padding: 0 20px;
+}
+
+.board-details__title {
+    color: var(--text-color);
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    text-shadow: var(--text-shadow);
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.board-details__name, .board-details__description {
+    margin: 10px 0;
+    color: var(--text-color);
+    text-shadow: var(--text-shadow);
+}
+
+
+.task-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.task-column {
+    padding: 20px;
+}
+
+.task-column__title {
+    color: var(--text-color);
+}
+
+.board-divider {
+    border: 0;
+    height: 1px;
+    background: var(--secondary-gradient);
+    margin: 15px 20px;
+    margin-bottom: 0;
+}
+
+.tasks-divider {
+    border: 0;
+    height: 1px;
+    background: var(--secondary-gradient);
+    margin: 15px 20px;
+}
+
+
+
+
+.task-divider {
+    border: 0;
+    height: 1px;
+    background: var(--secondary-gradient);
+    margin: 15px 0;
+}
+
+.task-delete-button,
+.task-update-button,
+.task-add-button {
+    background: #FDB813;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-right: 5px;
+}
+
+.task-delete-button:hover,
+.task-update-button:hover,
+.task-add-button:hover {
+    background: #FFA500;
+}
+
+.task-update-form {
+    margin-top: 20px;
+}
+
+.board-add-form {
+    position: sticky;
+    border: 1px solid var(--border-color-transparent);
+    border-radius: 12px;
+    bottom: 0;
+    z-index: 1;
+    padding: 20px;
+    margin: 10px 10px;
+    background-color: var(--color-background-dark);
+}
+
+.task-update-form input,
+.task-add-form input,
+.task-update-form select,
+.task-add-form select {
+    padding: 10px 20px;
+    margin: 10px 0 10px 0;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: #333;
+    color: #FDB813;
+    border: 1px solid #FDB813;
+}
+
+.task-update-form button,
+.task-add-form button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background: #FDB813;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.task-update-form button:hover,
+.task-add-form button:hover {
+    background: #FFA500;
+}
+
+.label {
+    color: #FDB813;
+    text-shadow: var(--text-shadow);
+    font-weight: bold;
+}

@@ -1,1 +1,51 @@
-[{"id":1,"name":"Board 1","description":"This is board 1","user_id":1,"created_at":"None","updated_at":"None"},{"id":2,"name":"Board 2","description":"This is board 2","user_id":2,"created_at":"None","updated_at":"None"},{"id":3,"name":"Board 3","description":"This is board 3","user_id":3,"created_at":"None","updated_at":"None"},{"id":5,"name":"TEST","description":"TEST_desc","created_at":"2024-05-05T10:58:51.458Z","updated_at":"2024-05-05T12:45:31.711Z"},{"id":6,"name":"CACA","description":"undefined","created_at":"2024-05-05T10:59:32.294Z","updated_at":"2024-05-05T10:59:32.294Z"},{"id":13,"name":"TEST","description":"TEST_desc","user_id":"3","created_at":"2024-05-05T11:10:26.063Z","updated_at":"2024-05-05T12:45:31.711Z"},{"id":12,"name":"antoine","description":"cacacacacacaaaccacaccacpipipipoi","user_id":3,"created_at":"2024-05-05T13:10:09.182Z","updated_at":"2024-05-05T13:10:09.182Z"},{"id":11,"name":"a","description":"a","user_id":3,"created_at":"2024-05-05T20:53:36.788Z","updated_at":"2024-05-05T20:53:36.788Z"},{"id":9,"name":"mamam","description":"mppppp","user_id":3,"created_at":"2024-05-05T21:19:46.163Z","updated_at":"2024-05-05T21:19:46.163Z"}]
+[
+
+    {
+        "id": 1,
+        "name": "Product Backlog",
+        "description": "List of all potential features for the product",
+        "user_id": 1,
+        "created_at": "None",
+        "updated_at": "None"
+    },
+    {
+        "id": 2,
+        "name": "Sprint Backlog",
+        "description": "Features selected for development in the current sprint",
+        "user_id": 2,
+        "created_at": "None",
+        "updated_at": "None"
+    },
+    {
+        "id": 3,
+        "name": "Development Board",
+        "description": "Board for tracking the development progress",
+        "user_id": 3,
+        "created_at": "None",
+        "updated_at": "None"
+    },
+    {
+        "id": 4,
+        "name": "Testing Board",
+        "description": "Board for tracking the testing progress",
+        "user_id": 3,
+        "created_at": "None",
+        "updated_at": "None"
+    },
+    {
+        "id": 5,
+        "name": "Done Board",
+        "description": "Board for tracking the completed features",
+        "user_id": 3,
+        "created_at": "None",
+        "updated_at": "None"
+    },
+    {
+        "id": 6,
+        "name": "Release Board",
+        "description": "Board for tracking the release progress",
+        "user_id": 3,
+        "created_at": "None",
+        "updated_at": "None"
+    }
+]

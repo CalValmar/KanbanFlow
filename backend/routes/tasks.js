@@ -5,8 +5,8 @@ const router = express.Router();
 
 // Verify status of a task : can only be --> "todo", "in-progress", "done"
 function verifyStatus(status) {
-    if (status === "todo" || status === "in-progress" || status === "done") {
-        return true;
+    if (status === "To-Do" || status === "In-Progress" || status === "Done") {
+        return status;
     } else {
         return false, console.log('[ERROR] Status not valid');
     }
@@ -25,17 +25,15 @@ router.get('/list', async (req, res, next) => {
     }
 });
 
-// Get tasks by user_id or board_id : GET /tasks/?user_id=xxx&board_id=yyy
+// Get tasks by user_id or board_id : GET /tasks/?board_id=yyy
 router.get('/', async (req, res, next) => {
-    const userId = req.query.user_id;
     const boardId = req.query.board_id;
 
     try {
         const tasks = await dml.readTasks();
-        const task = tasks.filter(task => parseInt(task.user_id) === parseInt(userId) || parseInt(task.board_id) === parseInt(boardId));
+        const task = tasks.filter(task => parseInt(task.board_id) === parseInt(boardId));
         if (task) {
             res.status(200).json(task);
-            if (userId) console.log('[INFO] Task retrieved for user ID : ' + userId);
             if (boardId) console.log('[INFO] Task retrieved for board ID : ' + boardId);
         } else {
             res.status(404).send('Task not found');
@@ -51,7 +49,7 @@ router.post('/create', async (req, res, next) => {
     const title = req.query.title;
     const description = req.query.description;
     const dueDate = req.query.due_date;
-    const boardId = req.query.board_id;
+    const boardId = parseInt(req.query.board_id);
     const userId = req.session.userId;
     const status = verifyStatus(req.query.status);
 
@@ -139,7 +137,6 @@ router.delete('/delete', async (req, res, next) => {
 //    description: 'string',    // Description of the task
 //    due_date: 'string',       // Due date of the task
 //    board_id: 'integer',      // Foreign key to board 
-//    user_id: 'integer',       // Foreign key to user
 //    status: 'string',         // Status of the task
 //    created_at: 'timestamp',  // Created date of the task
 //    updated_at: 'timestamp'   // Updated date of the task

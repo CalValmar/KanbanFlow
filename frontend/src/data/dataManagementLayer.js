@@ -107,9 +107,15 @@ async function createBoard(userID, boardName, boardDescription) {
     return data;
 }
 
-// http://localhost:5000/boards/?id=xxx&name=yyy&user_id=zzz
+// http://localhost:5000/boards/?user_id=zzz
 async function readBoards(userID) {
     const data = await fetchRoutines("boards/?user_id=" + userID);
+    return data;
+}
+
+// http://localhost:5000/boards/?id=xxx
+async function readBoard(boardID) {
+    const data = await fetchRoutines("boards/?id=" + boardID);
     return data;
 }
 
@@ -153,6 +159,7 @@ async function deleteTask(taskID) {
 // Export the functions
 module.exports.createBoard = createBoard;
 module.exports.readBoards = readBoards;
+module.exports.readBoard = readBoard;
 module.exports.updateBoard = updateBoard;
 module.exports.deleteBoard = deleteBoard;
 

@@ -23,7 +23,7 @@ function Main() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/boards/:id" element={<BoardDetails />} />
+        <Route path="/boards/:userId/:boardId" element={<BoardDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       {location.pathname !== "/dashboard" && !location.pathname.startsWith("/boards/") && <Footer />}

@@ -8,20 +8,20 @@ import './dashboard.css';
 function Dashboard() {
   const { isOpen } = useContext(NavContext);
   const [boards, setBoards] = useState([]);
-  const { username, password } = useContext(UserContext); // Get username and password from UserContext
+  const [userId, setUserId] = useState(null);
+  const { username, password } = useContext(UserContext);
   const [newBoardName, setNewBoardName] = useState('');
-  const [newBoardDescription, setNewBoardDescription] = useState(''); // New state for board description
+  const [newBoardDescription, setNewBoardDescription] = useState('');
   const [updatingBoardId, setUpdatingBoardId] = useState(null);
   const [updatedBoardName, setUpdatedBoardName] = useState('');
   const [updatedBoardDescription, setUpdatedBoardDescription] = useState('');
-  const [userId, setUserId] = useState(null); // New state for userId
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const userIdFromServer = await getUserID(username, password); // Use the username and password from the UserContext
-        setUserId(userIdFromServer); // Update userId state
+        const userIdFromServer = await getUserID(username, password);
+        setUserId(userIdFromServer);
         const response = await readBoards(userIdFromServer);
         if (response.filteredBoards) {
           if (Array.isArray(response.filteredBoards)) {
@@ -97,7 +97,7 @@ function Dashboard() {
       <div className="boards">
       { boards.length > 0 ? boards.map((board, index) => (
       <div className={`board board-${index}`} key={board.id}>
-        <Link to={`/boards/${board.id}`} className="board-link">
+        <Link to={`/boards/${userId}/${board.id}`} className="board-link">
           <h2 className="board-name">
             <span className="label">Board : </span> 
             <span className="name">{board.name}</span>

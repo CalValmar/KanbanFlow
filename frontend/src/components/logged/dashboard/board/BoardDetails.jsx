@@ -71,7 +71,7 @@ function BoardDetails() {
   };
 
   // Update a task
-    const handleUpdateTask = async (taskId) => {
+  const handleUpdateTask = async (taskId) => {
     try {
         const updatedTask = await updateTask(taskId, updatedTaskTitle, updatedTaskDescription, updatedTaskDueDate, updatedTaskStatus);
         setTasks(tasks.map(task => task.id === taskId ? updatedTask : task));
@@ -84,7 +84,7 @@ function BoardDetails() {
         console.error('Error updating task:', error);
         setError(error.toString());
     }
-    };
+   };
     
     return (
     <div className="board-details">

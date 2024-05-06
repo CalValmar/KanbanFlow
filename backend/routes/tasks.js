@@ -83,6 +83,7 @@ router.put('/update', async (req, res, next) => {
     const description = req.query.description;
     const dueDate = req.query.due_date;
     const status = verifyStatus(req.query.status);
+    const updated_at = new Date().toISOString();
 
     try {
         const tasks = await dml.readTasks();
@@ -91,6 +92,7 @@ router.put('/update', async (req, res, next) => {
             if (title) task.title = title;
             if (description) task.description = description;
             if (dueDate) task.due_date = dueDate;
+            if (updated_at) task.updated_at = updated_at;
             if (status) {
                 task.status = status;
                 await dml.writeTasks(tasks);

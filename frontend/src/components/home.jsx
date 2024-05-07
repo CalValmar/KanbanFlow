@@ -31,7 +31,7 @@ function Home() {
         <p className="desc-text">We develop products that help you and your team work together more efficiently.</p>
 
         <div className="product-item">
-          <img src="https://github.com/CalValmar/KanbanFlow/blob/main/src/mookup-home.png?raw=true" alt="Product 1" />
+          <img src="https://github.com/CalValmar/KanbanFlow/blob/main/src/mookup-home.png?raw=true" alt="Products" />
           <div className="product-features-list">
             <ul>
               <li>

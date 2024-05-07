@@ -1,0 +1,167 @@
+.contact-page.blur {
+    filter: blur(8px);
+}
+
+.contact-page {
+    background: var(--special-gradient);
+    background-size: cover;
+    height: 86vh;
+    color: var(--text-color);
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-card {
+    width: 350px;
+    padding: 20px;
+    background: var(--border-color-transparent);
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+}
+
+.contact-title-container {
+    margin-bottom: 20px;
+}
+
+.contact-title {
+    color: var(--text-color);   
+    text-align: center;
+    font-size: 2.2em;
+    text-shadow: var(--text-shadow);
+}
+
+.contact-form label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-input {
+    margin: 10px 0;
+    padding: 10px;
+    width: 93%;
+    background: none;
+    border: #cccccc 1px solid;
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 0.9em;
+}
+
+.contact-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-button {
+    display: block;
+    position: relative;
+    background: var(--secondary-gradient);
+    border-radius: 50px;
+    height: 50px;
+    text-align: center;
+    text-shadow: var(--text-shadow);
+    text-decoration: none;
+    color: var(--text-color);
+    line-height: 50px;
+    font-size: 18px;
+    padding: 0 70px;
+    white-space: nowrap;
+    margin-top: 25px;
+    transition: background .5s ease;
+    overflow: hidden;
+}
+
+.contact-button:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 100px;
+    background: #fff;
+    bottom: -25px;
+    left: 0;
+    border: 1px solid #fff;
+    transform: translateX(-50px) rotate(45deg);
+    transition: transform .5s ease;
+}
+
+.contact-button:hover {
+    background: transparent;
+    border: 1px solid var(--border-color-transparent);
+}
+
+.contact-button:hover:before {
+    transform: translateX(250px) rotate(45deg);
+}
+
+.error-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.error-message-container {
+    color: var(--desc-color);
+    font-size: large;
+    font-weight: bold;
+}
+
+.message-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.message-message-container {
+    color: var(--desc-color);
+    font-size: large;
+    font-weight: bold;
+}
+
+.forgot-password-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.forgot-password-container input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.forgot-password-container a {
+    background: aliceblue;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.forgot-password-container a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(255,203,8,1) 0%, rgba(250,168,25,1) 40%, rgba(244,120,33,1) 100%);
+    visibility: hidden;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.forgot-password-container a:hover {
+    background: linear-gradient(90deg, rgba(255,203,8,1) 0%, rgba(250,168,25,1) 40%, rgba(244,120,33,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.forgot-password-container a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}

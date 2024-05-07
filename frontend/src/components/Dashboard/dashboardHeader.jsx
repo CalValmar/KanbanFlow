@@ -1,9 +1,9 @@
 import { useContext, useEffect } from 'react';
-import { NavContext, UserContext } from './context';
+import { NavContext, UserContext } from '../context';
 import { Link, useNavigate } from 'react-router-dom';
-import { getUser } from '../data/dataManagementLayer';
+import { getUser } from '../../data/dataManagementLayer';
 
-import './Styles/header.css';
+import '../Styles/header.css';
 
 function DashboardHeader() {
   const { isOpen, setIsOpen } = useContext(NavContext);

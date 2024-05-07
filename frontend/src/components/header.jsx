@@ -105,10 +105,10 @@ function Header() {
         {/* Contact and Demo Navigation */}
         <div class="nav-links">
           <div class="contact-nav">
-            <Link to="/#contact">Contact us</Link>
+            <Link to="/contact">Contact us</Link>
           </div>
           <div class="demo-nav">
-            <Link to="/#demo">Try the demo</Link>
+            <Link to="/contact">Try the demo</Link>
           </div>
         </div>
       </nav>

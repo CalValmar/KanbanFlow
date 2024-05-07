@@ -12,7 +12,7 @@ function Footer() {
             <li><a href="/privacy">Privacy</a></li>
             <li><a href="/legal-notice">Legal Notice</a></li>
             <li><a href="/term-of-use">Term of Use</a></li>
-            <li><a href="/#contact">Contact</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
         {/* Copyright Section */}

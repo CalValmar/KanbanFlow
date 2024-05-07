@@ -11,8 +11,11 @@ import Footer from './components/footer';
 
 import Home from './components/home';
 import Dashboard from './components/Dashboard/dashboard';
-import DashboardHeader from './components/dashboardHeader';
+import DashboardHeader from './components/Dashboard/dashboardHeader';
 import BoardDetails from './components/BoardDetails/boardDetails';
+
+import Contact from './components/LegalInformations/contact';
+import ThankYou from './components/LegalInformations/thankYou';
 
 import NotFound from './components/NotFound/notFound';
 
@@ -31,6 +34,8 @@ function Main() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/thank-you" element={<ThankYou />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/boards/:userId/:boardId" element={<BoardDetails />} />
         <Route path="*" element={<NotFound />} />

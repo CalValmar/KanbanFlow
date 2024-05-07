@@ -387,6 +387,11 @@
     text-shadow: var(--text-shadow);
 }
 
+.demo-button a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
 .about-section {
     text-align: left;
     display: inline-grid;

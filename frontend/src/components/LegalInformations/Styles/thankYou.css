@@ -1,0 +1,87 @@
+.thankyou-page {
+    background: var(--special-gradient);
+    background-size: cover;
+    height: 86vh;
+    color: var(--text-color);
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.thankyou-card {
+    width: 350px;
+    padding: 20px;
+    background: var(--border-color-transparent);
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+}
+
+.thankyou-title-container {
+    margin-bottom: 20px;
+}
+
+.thankyou-title {
+    color: var(--text-color);   
+    text-align: center;
+    font-size: 2.2em;
+    text-shadow: var(--text-shadow);
+}
+
+.thankyou-message-container {
+    color: var(--desc-color);
+    font-size: large;
+    font-weight: bold;
+}
+
+.thankyou-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.thankyou-message {
+    margin: 10px 0;
+    padding: 0px 20px;
+    text-align: center;
+}
+
+.thankyou-button {
+    display: block;
+    position: relative;
+    background: var(--secondary-gradient);
+    border-radius: 50px;
+    height: 50px;
+    text-align: center;
+    text-shadow: var(--text-shadow);
+    text-decoration: none;
+    color: var(--text-color);
+    line-height: 50px;
+    font-size: 18px;
+    padding: 0 70px;
+    white-space: nowrap;
+    transition: background .5s ease;
+    overflow: hidden;
+}
+
+.thankyou-button:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 100px;
+    background: #fff;
+    bottom: -25px;
+    left: 0;
+    border: 1px solid #fff;
+    transform: translateX(-50px) rotate(45deg);
+    transition: transform .5s ease;
+}
+
+.thankyou-button:hover {
+    background: transparent;
+    border: 1px solid var(--border-color-transparent);
+}
+
+.thankyou-button:hover:before {
+    transform: translateX(250px) rotate(45deg);
+}

@@ -81,6 +81,11 @@ async function deleteRoutines(url) {
         });
 }
 
+// http://localhost:5000/users/?username=xxx
+async function getUser(username) {
+    const data = await fetchRoutines("users/?username=" + username);
+    return data;
+}
 
 // http://localhost:5000/users/login?username=xxx&password=yyy
 async function login(username, password) {
@@ -173,3 +178,4 @@ module.exports.logout = logout;
 module.exports.register = register;
 
 module.exports.getUserID = getUserID;
+module.exports.getUser = getUser;

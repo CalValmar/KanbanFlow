@@ -108,6 +108,18 @@
     font-weight: bold;
 }
 
+.message-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.message-message-container {
+    color: var(--desc-color);
+    font-size: large;
+    font-weight: bold;
+}
+
 .forgot-password-container {
     display: flex;
     justify-content: space-between;

@@ -99,7 +99,7 @@ router.post('/register', async (req, res, next) => {
             id: id,
             username: username,
             password: hashedPassword,
-            profile_picture: 'backend/src/default.jpg',
+            profile_picture: 'https://cdn.discordapp.com/attachments/1024213058370945044/1237177648988295270/default.jpg?ex=663ab2f9&is=66396179&hm=6ae0a35ef0c3dbcc038fe96818d0f6adf9a6e98f7ec15ade821e8dc940ab0334&',
             created_at: new Date().toISOString(),
         };
         const allUsers = [...existedUsers, newUser];

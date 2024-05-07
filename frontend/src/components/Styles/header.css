@@ -51,6 +51,27 @@
     box-shadow: 0 0 12px rgb(255,203,8);
 }
 
+/* Logout button */
+.logout-section button {
+    font-weight: bold;
+    font-size: 16px;
+    background: rgb(255,203,8);
+    background: radial-gradient(circle, rgba(255,203,8,1) 0%, rgba(250,168,25,1) 35%, rgba(244,120,33,1) 100%);
+    color: aliceblue;
+    padding: 5px 15px;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: .5px;
+    border: 2px solid transparent;
+    line-height: 30px;
+    transition: box-shadow 0.3s ease;
+}
+
+.logout-section button:hover {
+    box-shadow: 0 0 12px rgb(255,203,8);
+}
+
 /* Burger Bar */
 .burger-button {
     font-size: 21px;
@@ -151,7 +172,7 @@
 }
 
 /* Navigation Links */
-.home-nav a, .about-nav a, .products-nav a, .services-nav a, .contact-nav a, .demo-nav a {
+.home-nav a, .about-nav a, .products-nav a, .services-nav a, .contact-nav a, .demo-nav a, .dashboard-nav a {
     color: aliceblue;
     font-size: 16px;
     transition: color 0.3s ease-in-out;
@@ -181,4 +202,19 @@
 
 .nav-links a:hover {
     box-shadow: 0 0 12px rgb(255,203,8);
+}
+
+
+.user-info {
+    padding: 0 10px;
+}
+
+.user-info img {
+    width: 50px;
+    height: 50px; 
+    border-radius: 50%;
+}
+
+.user-info p {
+    font-size: 16px;
 }

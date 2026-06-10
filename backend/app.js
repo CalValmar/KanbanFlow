@@ -1,13 +1,26 @@
 const express = require('express');
+require('dotenv').config();
 const session = require('express-session');
 const path = require('path');
-const app = express();  
+const helmet = require('helmet');
+const cors = require('cors');
+const rateLimit = require('express-rate-limit');
 
-// Serve static files from the src directory
-app.use(express.static(path.join(__dirname, '../src')));
+const app = express();
 
-// Middleware
+// Serve static files from the frontend build if present, otherwise fallback to src
+const buildPath = path.join(__dirname, '../frontend/build');
+const staticPath = require('fs').existsSync(buildPath) ? buildPath : path.join(__dirname, '../src');
+
+app.use(express.static(staticPath));
+
+// Basic security and parsing middleware
+app.use(helmet());
 app.use(express.json());
+
+// Rate limiter to mitigate brute-force and DOS
+const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100 });
+app.use(limiter);
 
 // Routes (endpoints)
 app.get('/', (req, res) => {
@@ -28,20 +41,27 @@ app.get('/status', (req, res) => {
 });
 
 // Session middleware
+const sessionSecret = process.env.SESSION_SECRET || 'dev-secret-change-me';
+app.set('trust proxy', 1);
 app.use(session({
-  secret: 'secret-key',
+  secret: sessionSecret,
   resave: false,
-  saveUninitialized: true,
-  cookie: { secure: false }
+  saveUninitialized: false,
+  cookie: {
+    secure: process.env.NODE_ENV === 'production',
+    httpOnly: true,
+    sameSite: 'lax',
+  },
 }));
 
-// CROS (Cross-Origin Resource Sharing) middleware
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  next();
-});
+// CORS configuration: whitelist an origin or use env var
+const corsOptions = {
+  origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+};
+app.use(cors(corsOptions));
 
 // API routes
 app.use('/users', require('./routes/users'));
@@ -49,8 +69,8 @@ app.use('/boards', require('./routes/boards'));
 app.use('/tasks', require('./routes/tasks'));
 
 // Error handling middleware
-app.use((err, req, res, next) => {
-  console.error("[ERROR] " + err); // Log the error to the console
+app.use((err, req, res, _next) => {
+  console.error(`[ERROR] ${err}`); // Log the error to the console
   res.status(500).send('Something went wrong!'); // Send a 500 Internal Server Error response
 });
 

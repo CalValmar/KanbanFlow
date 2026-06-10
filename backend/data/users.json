@@ -1,23 +1,51 @@
 [
-    {
-        "id": 1,
-        "username": "Gus",
-        "password": "$2b$10$uIFuC0QouoH.PJ3isawHcuinBz/cRfXC33nB/LSaC4Tc33BRlEBx.",
-        "profile_picture": "https://github.com/CalValmar/KanbanFlow/blob/main/src/default.jpg?raw=true",
-        "created_at": "2024-04-09T22:23:17.756Z"
-    },
-    {
-        "id": 2,
-        "username": "xxx",
-        "password": "$2b$10$cvM/JfsoOI6f36cC1cfEOuk9wgxAwFDZQeyoQpi54Xmyt3n4oY89K",
-        "profile_picture": "https://github.com/CalValmar/KanbanFlow/blob/main/src/default.jpg?raw=true",
-        "created_at": "2024-04-14T14:55:56.049Z"
-    },
-    {
-        "id": 3,
-        "username": "Paul",
-        "password": "$2b$10$Mx5OaFHqegBRGev8J/LvqeuQZPC.W4HeSk0CQJd2yomd0Zs.nVqUi",
-        "profile_picture": "https://github.com/CalValmar/KanbanFlow/blob/main/src/default.jpg?raw=true",
-        "created_at": "2024-05-06T16:37:17.763Z"
-    }
+  {
+    "id": 1,
+    "username": "Gus",
+    "password": "$2b$10$uIFuC0QouoH.PJ3isawHcuinBz/cRfXC33nB/LSaC4Tc33BRlEBx.",
+    "profile_picture": "https://github.com/CalValmar/KanbanFlow/blob/main/src/default.jpg?raw=true",
+    "created_at": "2024-04-09T22:23:17.756Z"
+  },
+  {
+    "id": 2,
+    "username": "xxx",
+    "password": "$2b$10$cvM/JfsoOI6f36cC1cfEOuk9wgxAwFDZQeyoQpi54Xmyt3n4oY89K",
+    "profile_picture": "https://github.com/CalValmar/KanbanFlow/blob/main/src/default.jpg?raw=true",
+    "created_at": "2024-04-14T14:55:56.049Z"
+  },
+  {
+    "id": 3,
+    "username": "Paul",
+    "password": "$2b$10$Mx5OaFHqegBRGev8J/LvqeuQZPC.W4HeSk0CQJd2yomd0Zs.nVqUi",
+    "profile_picture": "https://github.com/CalValmar/KanbanFlow/blob/main/src/default.jpg?raw=true",
+    "created_at": "2024-05-06T16:37:17.763Z"
+  },
+  {
+    "id": 4,
+    "username": "autotest",
+    "password": "$2b$10$142.l0GsXBBEzz81wsvTS.Gi54x9tw/aKk6Ky0y/iaPaVYeVYL4l.",
+    "profile_picture": "https://github.com/CalValmar/KanbanFlow/blob/main/src/default.jpg?raw=true",
+    "created_at": "2026-06-10T00:54:36.974Z"
+  },
+  {
+    "id": 5,
+    "username": "autotest2",
+    "password": "$2b$10$rBSFIz.sQVgPl0I4jjIwpeiZ1grd0o79oEmztW1LPNAwSb8G8kMLS",
+    "profile_picture": "https://github.com/CalValmar/KanbanFlow/blob/main/src/default.jpg?raw=true",
+    "created_at": "2026-06-10T00:57:40.660Z"
+  },
+  {
+    "id": 6,
+    "username": "autotest_user",
+    "password": "$2b$10$42I8VHHBh8MKLt1MMr8Km.y0s1O2Yjz.84LCkoqRlKAgXzrkkODkO",
+    "profile_picture": "https://github.com/CalValmar/KanbanFlow/blob/main/src/default.jpg?raw=true",
+    "created_at": "2026-06-10T01:21:05.357Z"
+  },
+  {
+    "id": 7,
+    "username": "autotest_1781054684",
+    "password": "$2b$10$feGpAPkPUGDlIKokv7DaEuMcdw9EWEzAHTWm9eG.GrIdLxCtb4eaS",
+    "profile_picture": "https://github.com/CalValmar/KanbanFlow/blob/main/src/default.jpg?raw=true",
+    "created_at": "2026-06-10T01:24:44.362Z"
+  }
 ]
